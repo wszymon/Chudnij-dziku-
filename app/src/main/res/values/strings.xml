@@ -1,3 +1,9 @@
 <resources>
     <string name="app_name">Chudnij dziku!</string>
+    <string name="goJourneyButton">Start your journey</string>
+    <string name="countButton">Count yourself</string>
+    <string name="intervalsButton">Go intervals</string>
+    <string name="ateKcal">Today you ate:</string>
+    <string name="burnkcal">Today you burn:</string>
+    <string name="randomFact">Here will be random health and fitness facts</string>
 </resources>
