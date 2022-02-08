@@ -6,4 +6,11 @@
     <string name="ateKcal">Today you ate:</string>
     <string name="burnkcal">Today you burn:</string>
     <string name="randomFact">Here will be random health and fitness facts</string>
+    <string name="roundTimeTextView">długość rundy:</string>
+    <string name="breakTimeTextView">Ile będziesz odpoczywał:</string>
+    <string name="IntervalInfoTextView">Dziku, Podaj w sekundach</string>
+    <string name="roundsNumberTextView">oraz ile chcesz zrobić rund:</string>
+    <string name="sumIntervalsTimeTextView">Twój trening będzie trwał:</string>
+    <string name="confirmIntervalsPropertiesButton">Zatwierdź!</string>
+    <string name="sumIntervalTimeTextView">... minut i ... sekund</string>
 </resources>

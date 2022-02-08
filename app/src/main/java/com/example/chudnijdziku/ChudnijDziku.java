@@ -1,5 +1,7 @@
 package com.example.chudnijdziku;
 
+import android.widget.Button;
+
 public class ChudnijDziku extends MainActivity {
     private int eatenKcal;
     private int burnedKcal;

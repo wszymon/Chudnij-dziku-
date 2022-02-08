@@ -1,6 +1,9 @@
 package com.example.chudnijdziku;
 
-public class Intervals extends ChudnijDziku{
+
+import android.widget.Button;
+
+public class Intervals extends ChudnijDziku implements procedureable{
     //all times will be in seconds
     private int roundTime;
     private int breakTime;
@@ -11,6 +14,9 @@ public class Intervals extends ChudnijDziku{
 
     public int getRoundTime() {
         return roundTime;
+    }
+
+    public Intervals() {
     }
 
     public void setRoundTime(int roundTime) {
@@ -55,5 +61,29 @@ public class Intervals extends ChudnijDziku{
 
     public void setRoundsNumber(int roundsNumber) {
         this.roundsNumber = roundsNumber;
+    }
+
+    public void showTrainingTime(){
+        if(roundTime == 0 && breakTime == 0 && roundsNumber == 0){
+
+        }
+        else if(breakTime == 0 && roundsNumber == 0){
+
+        }
+        else if(roundsNumber == 0){
+
+        }
+        else{
+
+        }
+    }
+    public void input(){
+        
+    }
+
+    @Override
+    public void procedure() {
+
+
     }
 }

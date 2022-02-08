@@ -11,6 +11,7 @@
         android:layout_width="195dp"
         android:layout_height="125dp"
         android:layout_marginEnd="8dp"
+        android:onClick="goIntervals"
         android:text="@string/intervalsButton"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/kcalCounterButton" />
