@@ -10,6 +10,7 @@ public class ChudnijDziku extends MainActivity {
     private String burnedKcalTextView;
     private String randomFactTextView;
 
+
     public int getEatenKcal() {
         return eatenKcal;
     }

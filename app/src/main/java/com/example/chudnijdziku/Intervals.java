@@ -78,7 +78,7 @@ public class Intervals extends ChudnijDziku implements procedureable{
         }
     }
     public void input(){
-        
+
     }
 
     @Override

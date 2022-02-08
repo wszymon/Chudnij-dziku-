@@ -7,33 +7,31 @@
     tools:context=".IntervalsActivity">
 
     <EditText
-        android:id="@+id/roundTimeTextView"
+        android:id="@+id/roundTimeEditText"
         android:layout_width="wrap_content"
         android:layout_height="50dp"
-        android:layout_marginTop="16dp"
         android:ems="10"
         android:inputType="number"
         android:text="@string/roundTimeTextView"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.497"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/intervalInfoTextView" />
+        app:layout_constraintTop_toBottomOf="@+id/roundTimeAskTextView" />
 
     <EditText
-        android:id="@+id/breakTimeTextView"
+        android:id="@+id/breakTimeEditText"
         android:layout_width="wrap_content"
         android:layout_height="50dp"
-        android:layout_marginTop="16dp"
         android:ems="10"
         android:inputType="number"
         android:text="@string/breakTimeTextView"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.497"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/roundTimeTextView" />
+        app:layout_constraintTop_toBottomOf="@+id/breakTimeAskTextView" />
 
     <TextView
-        android:id="@+id/intervalInfoTextView"
+        android:id="@+id/roundNumAskTextView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="36dp"
@@ -45,22 +43,21 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <EditText
-        android:id="@+id/editTextTextPersonName3"
+        android:id="@+id/roundNumberEditText"
         android:layout_width="229dp"
-        android:layout_height="50dp"
-        android:layout_marginTop="16dp"
+        android:layout_height="48dp"
         android:ems="10"
         android:inputType="number"
         android:text="@string/roundsNumberTextView"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/breakTimeTextView" />
+        app:layout_constraintTop_toBottomOf="@+id/roundNumAskTextView" />
 
     <TextView
         android:id="@+id/sumIntervalsTimeTextView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
+        android:layout_marginTop="20dp"
         android:text="@string/sumIntervalsTimeTextView"
         android:textColor="@color/black"
         android:textSize="24sp"
@@ -83,12 +80,33 @@
         android:id="@+id/confirmIntervalsPropertiesButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
+        android:layout_marginTop="20dp"
         android:onClick="ConfirmIntervalsProperties"
         android:text="@string/confirmIntervalsPropertiesButton"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editTextTextPersonName3" />
+        app:layout_constraintTop_toBottomOf="@+id/breakTimeEditText" />
+
+    <TextView
+        android:id="@+id/roundTimeAskTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/roundTimeAskTextView"
+        android:textColor="@color/black"
+        android:textSize="20sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/roundNumberEditText" />
+
+    <TextView
+        android:id="@+id/breakTimeAskTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/breakTimeAskTextView"
+        android:textColor="@color/black"
+        android:textSize="20sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/roundTimeEditText" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
