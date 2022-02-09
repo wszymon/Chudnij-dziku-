@@ -33,7 +33,7 @@ public class IntervalsActivity extends Intervals {
             public void onClick(View view) {
                 intervals.setRoundTime(Integer.parseInt(roundTime.getText().toString()));//setting round time
 
-                intervals.setBreakTime(Integer.parseInt(breakTime.getText().toString()));//setting break time
+                intervals.setBreakTime(Integer.parseInt(breakTime.getText().toString()));//setting break tim
 
                 intervals.setRoundsNumber(Integer.parseInt(roundsNum.getText().toString()));//setting rounds number
 
