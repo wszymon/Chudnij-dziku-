@@ -1,5 +1,7 @@
 package com.example.chudnijdziku;
 
+import static java.util.concurrent.TimeUnit.*;
+
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -14,7 +16,7 @@ public class IntervalsActivity extends MainActivity {
     private int roundTime;
     private int breakTime;
     private int roundsNumber;
-    private TextView sumTimeTextView, roundBreakTextView, currentRoundTextView, currentIntervaTextView, currentBreakTextView;
+    private TextView sumTimeTextView, roundBreakTextView, currentRoundTextView, currentIntervalTextView, currentBreakTextView;
     private EditText roundTimeEditText, breakTimeEditText, roundsNumEditText;
     private Button confirmButton, startIntervalsButton;
 
@@ -24,10 +26,11 @@ public class IntervalsActivity extends MainActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_intervals);
-        //ConfirmIntervalsProperties();
+        ConfirmIntervalsProperties();
+        startIntervals();
     }
 
-    public void ConfirmIntervalsProperties(View v){
+    public void ConfirmIntervalsProperties(){
         //picking layout views
         roundTimeEditText = (EditText)findViewById(R.id.roundTimeEditText);
         breakTimeEditText = (EditText)findViewById(R.id.breakTimeEditText);
@@ -52,30 +55,30 @@ public class IntervalsActivity extends MainActivity {
         sumTimeTextView.setText(minutes +" min i " + sec + " sek");
     }
 
-    public void startIntervals(View v){
+    public void startIntervals(){
         roundBreakTextView = (TextView)findViewById(R.id.roundBreakTextView);
         currentRoundTextView = (TextView)findViewById(R.id.currentRoundTextView);
-        currentIntervaTextView = (TextView)findViewById(R.id.currentIntervalTextView);
+        currentIntervalTextView = (TextView)findViewById(R.id.currentIntervalTextView);
         currentBreakTextView = (TextView)findViewById(R.id.currentBreakTextView);
 
         startIntervalsButton = (Button)findViewById(R.id.startIntervalButton);
         startIntervalsButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                for(int i = 5; i >= 1; i--){        //begining descend counting loop, just for preparation
+                /*for(int i = 5; i >= 1; i--){        //begining descend counting loop, just for preparation
                     Toast.makeText(getApplicationContext(),i,Toast.LENGTH_SHORT).show();
                     try {
-                        TimeUnit.SECONDS.sleep(1);
+                        Thread.sleep(1000);
                     } catch (InterruptedException e) {
                         e.printStackTrace();
                     }
-                }
+                }*/
                 for(int i = 1; i <= roundsNumber; i++){ //round number
                     roundBreakTextView.setText("Praca, praca...");  //shows that it is workout time
-                    currentRoundTextView.setText(i);       //shows current round number
+                    currentRoundTextView.setText(i+"");       //shows current round number
 
                     for(int j = roundTime; j >= 0; j--){    //counting round time descend til 0
-                        currentIntervaTextView.setText(j);
+                        currentIntervalTextView.setText(j+"");
                         try {
                             TimeUnit.SECONDS.sleep(1);
                         } catch (InterruptedException e) {
@@ -84,7 +87,7 @@ public class IntervalsActivity extends MainActivity {
                     }
                     roundBreakTextView.setText("Przerwa, milordzie :)"); //shows that it is break time
                     for(int j = breakTime; j >= 0; j--){
-                        breakTimeEditText.setText(j);
+                        currentBreakTextView.setText(j+"");
                         try {
                             TimeUnit.SECONDS.sleep(1);
                         } catch (InterruptedException e) {
@@ -93,6 +96,10 @@ public class IntervalsActivity extends MainActivity {
                     }
 
                 }
+                Toast.makeText(getApplicationContext(),"Gratuluję\nukończenia\ntreningu :D",Toast.LENGTH_LONG).show();
+                //int k = 20;
+                //currentRoundTextView.setText(k + "");       //shows current round number
+                //Toast.makeText(getApplicationContext(),"Click",Toast.LENGTH_SHORT).show();
             }
         });
     }
