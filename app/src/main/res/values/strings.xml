@@ -16,4 +16,8 @@
     <string name="roundTimeAskTextView">Jak długie mają być te rundy:</string>
     <string name="breakTimeAskTextView">a ile odpoczynku, ryjku:</string>
     <string name="startButton">Jedziemy!</string>
+    <string name="roundBreakTextView">ćwiczenia/przerwa</string>
+    <string name="currentRoundTextView">Runda nr</string>
+    <string name="currentBreakTextView">Przerwa</string>
+    <string name="currentIntervalTextView">Ćwieczenia</string>
 </resources>

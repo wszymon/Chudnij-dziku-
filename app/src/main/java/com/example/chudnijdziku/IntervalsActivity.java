@@ -6,6 +6,7 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
+import java.util.concurrent.TimeUnit;
 
 public class IntervalsActivity extends MainActivity {
 
@@ -13,9 +14,10 @@ public class IntervalsActivity extends MainActivity {
     private int roundTime;
     private int breakTime;
     private int roundsNumber;
-    private TextView sumTimeTextView, roundBreakTextView, currentRoundTextView, currentIntervaTextView;
+    private TextView sumTimeTextView, roundBreakTextView, currentRoundTextView, currentIntervaTextView, currentBreakTextView;
     private EditText roundTimeEditText, breakTimeEditText, roundsNumEditText;
     private Button confirmButton, startIntervalsButton;
+
 
 
     @Override
@@ -53,7 +55,46 @@ public class IntervalsActivity extends MainActivity {
     public void startIntervals(View v){
         roundBreakTextView = (TextView)findViewById(R.id.roundBreakTextView);
         currentRoundTextView = (TextView)findViewById(R.id.currentRoundTextView);
-        currentIntervaTextView = (TextView)findViewById(R.id.currentIntervaTextView);
+        currentIntervaTextView = (TextView)findViewById(R.id.currentIntervalTextView);
+        currentBreakTextView = (TextView)findViewById(R.id.currentBreakTextView);
+
+        startIntervalsButton = (Button)findViewById(R.id.startIntervalButton);
+        startIntervalsButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                for(int i = 5; i >= 1; i--){        //begining descend counting loop, just for preparation
+                    Toast.makeText(getApplicationContext(),i,Toast.LENGTH_SHORT).show();
+                    try {
+                        TimeUnit.SECONDS.sleep(1);
+                    } catch (InterruptedException e) {
+                        e.printStackTrace();
+                    }
+                }
+                for(int i = 1; i <= roundsNumber; i++){ //round number
+                    roundBreakTextView.setText("Praca, praca...");  //shows that it is workout time
+                    currentRoundTextView.setText(i);       //shows current round number
+
+                    for(int j = roundTime; j >= 0; j--){    //counting round time descend til 0
+                        currentIntervaTextView.setText(j);
+                        try {
+                            TimeUnit.SECONDS.sleep(1);
+                        } catch (InterruptedException e) {
+                            e.printStackTrace();
+                        }
+                    }
+                    roundBreakTextView.setText("Przerwa, milordzie :)"); //shows that it is break time
+                    for(int j = breakTime; j >= 0; j--){
+                        breakTimeEditText.setText(j);
+                        try {
+                            TimeUnit.SECONDS.sleep(1);
+                        } catch (InterruptedException e) {
+                            e.printStackTrace();
+                        }
+                    }
+
+                }
+            }
+        });
     }
 
 

@@ -126,9 +126,12 @@
         android:id="@+id/roundBreakTextView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="24dp"
-        android:text="aktywnosc/przerwa"
+        android:layout_marginTop="8dp"
+        android:text="@string/roundBreakTextView"
+        android:textColor="@color/black"
+        android:textSize="34sp"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.496"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/startIntervalButton" />
 
@@ -136,16 +139,37 @@
         android:id="@+id/currentRoundTextView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="numer rundy"
-        tools:layout_editor_absoluteX="120dp"
-        tools:layout_editor_absoluteY="500dp" />
+        android:layout_marginTop="8dp"
+        android:text="@string/currentRoundTextView"
+        android:textColor="@color/black"
+        android:textSize="24sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/roundBreakTextView" />
 
     <TextView
-        android:id="@+id/currentIntervaTextView"
+        android:id="@+id/currentIntervalTextView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="sekundy"
-        tools:layout_editor_absoluteX="235dp"
-        tools:layout_editor_absoluteY="500dp" />
+        android:layout_marginTop="8dp"
+        android:text="@string/currentIntervalTextView"
+        android:textColor="@color/black"
+        android:textSize="24sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/currentRoundTextView" />
+
+    <TextView
+        android:id="@+id/currentBreakTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:text="@string/currentBreakTextView"
+        android:textColor="@color/black"
+        android:textSize="24sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/currentIntervalTextView" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
