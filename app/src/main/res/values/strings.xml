@@ -15,4 +15,5 @@
     <string name="sumIntervalTimeTextView">... minut i ... sekund</string>
     <string name="roundTimeAskTextView">Jak długie mają być te rundy:</string>
     <string name="breakTimeAskTextView">a ile odpoczynku, ryjku:</string>
+    <string name="startButton">Jedziemy!</string>
 </resources>
