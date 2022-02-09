@@ -9,7 +9,9 @@ public class ChudnijDziku extends MainActivity {
     private String eatenKcalTextView;
     private String burnedKcalTextView;
     private String randomFactTextView;
+    private static int minute = 60;
 
+    public int getMinute() {return minute;}
 
     public int getEatenKcal() {
         return eatenKcal;
@@ -58,4 +60,5 @@ public class ChudnijDziku extends MainActivity {
     public void setRandomFactTextView(String randomFactTextView) {
         this.randomFactTextView = randomFactTextView;
     }
+
 }

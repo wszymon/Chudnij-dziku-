@@ -66,13 +66,13 @@
         app:layout_constraintTop_toBottomOf="@+id/confirmIntervalsPropertiesButton" />
 
     <TextView
-        android:id="@+id/textView4"
+        android:id="@+id/sumTimeTextView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
-        android:text="TextView"
+        android:text="@string/sumIntervalTimeTextView"
+        android:textColor="@color/black"
+        android:textSize="20sp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/sumIntervalsTimeTextView" />
 
@@ -81,7 +81,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="20dp"
-        android:onClick="ConfirmIntervalsProperties"
+        android:onClick="procedure"
         android:text="@string/confirmIntervalsPropertiesButton"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
