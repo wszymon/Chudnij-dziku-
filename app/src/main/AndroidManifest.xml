@@ -10,6 +10,9 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.ChudnijDziku">
         <activity
+            android:name=".Journey"
+            android:exported="false" />
+        <activity
             android:name=".IntervalsActivity"
             android:exported="false" />
         <activity

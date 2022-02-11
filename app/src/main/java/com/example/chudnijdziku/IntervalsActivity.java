@@ -10,7 +10,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 import java.util.concurrent.TimeUnit;
 
-public class IntervalsActivity extends MainActivity {
+public class IntervalsActivity extends MainActivity  {
 
     //all times will be in seconds
     private int roundTime;
@@ -80,16 +80,20 @@ public class IntervalsActivity extends MainActivity {
                     for(int j = roundTime; j >= 0; j--){    //counting round time descend til 0
                         currentIntervalTextView.setText(j+"");
                         try {
-                            TimeUnit.SECONDS.sleep(1);
+                            Thread.sleep(1000);
                         } catch (InterruptedException e) {
                             e.printStackTrace();
                         }
                     }
-                    roundBreakTextView.setText("Przerwa, milordzie :)"); //shows that it is break time
+                    //Interval interval = new Interval(roundTime, currentIntervalTextView);
+                    //interval.start();
+                    roundBreakTextView.setText("Przerwa, byku :)"); //shows that it is break time
+                   // Break break1 = new Break(breakTime, currentBreakTextView);
+                   // break1.start();
                     for(int j = breakTime; j >= 0; j--){
                         currentBreakTextView.setText(j+"");
                         try {
-                            TimeUnit.SECONDS.sleep(1);
+                            Thread.sleep(1000);
                         } catch (InterruptedException e) {
                             e.printStackTrace();
                         }
@@ -97,12 +101,12 @@ public class IntervalsActivity extends MainActivity {
 
                 }
                 Toast.makeText(getApplicationContext(),"Gratuluję\nukończenia\ntreningu :D",Toast.LENGTH_LONG).show();
-                //int k = 20;
-                //currentRoundTextView.setText(k + "");       //shows current round number
-                //Toast.makeText(getApplicationContext(),"Click",Toast.LENGTH_SHORT).show();
+
             }
         });
     }
+
+
 
 
 

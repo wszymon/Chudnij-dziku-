@@ -10,6 +10,7 @@ import android.view.WindowManager;
 
 public class MainActivity extends AppCompatActivity {
 
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -24,4 +25,9 @@ public class MainActivity extends AppCompatActivity {
         Intent i = new Intent(this,IntervalsActivity.class);
         startActivity(i);
     }
+
+    public void GoJourney(View v){
+        Intent i = new Intent(this, )
+    }
+
 }
