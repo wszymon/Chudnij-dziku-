@@ -20,4 +20,6 @@
     <string name="currentRoundTextView">Runda nr</string>
     <string name="currentBreakTextView">Przerwa</string>
     <string name="currentIntervalTextView">Ćwieczenia</string>
+    <string name="textToRead">text</string>
+    <string name="continueButton">Idź dalej</string>
 </resources>

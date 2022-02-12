@@ -10,6 +10,9 @@ import android.view.WindowManager;
 
 public class MainActivity extends AppCompatActivity {
 
+    private float bodyweight;
+    private float growth;
+    private float age;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -27,7 +30,8 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void GoJourney(View v){
-        Intent i = new Intent(this, )
+        Intent i = new Intent(this, JourneyActivity.class);
+        startActivity(i);
     }
 
 }

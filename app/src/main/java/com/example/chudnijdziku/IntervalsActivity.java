@@ -73,6 +73,7 @@ public class IntervalsActivity extends MainActivity  {
                         e.printStackTrace();
                     }
                 }*/
+
                 for(int i = 1; i <= roundsNumber; i++){ //round number
                     roundBreakTextView.setText("Praca, praca...");  //shows that it is workout time
                     currentRoundTextView.setText(i+"");       //shows current round number
