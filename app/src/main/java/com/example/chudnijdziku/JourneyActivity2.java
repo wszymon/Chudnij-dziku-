@@ -46,6 +46,6 @@ public class JourneyActivity2 extends JourneyActivity {
         setBMO((int)BMO);
         Intent intent = new Intent(this, JourneyActivity3.class);
         startActivity(intent);
-        //Toast.makeText(this, getBMO()+"", Toast.LENGTH_SHORT).show();
+        Toast.makeText(this, getBMO()+"", Toast.LENGTH_SHORT).show();
     }
 }
