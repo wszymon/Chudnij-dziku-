@@ -14,7 +14,7 @@
         android:textAlignment="center"
         android:textColor="@color/black"
         android:textSize="16sp"
-        app:layout_constraintBottom_toTopOf="@+id/button"
+        app:layout_constraintBottom_toTopOf="@+id/goForwardButton"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
@@ -22,11 +22,11 @@
         app:layout_constraintVertical_bias="0.35" />
 
     <Button
-        android:id="@+id/button"
+        android:id="@+id/goForwardButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginBottom="80dp"
-        android:onClick="goTo"
+        android:onClick="goForward"
         android:text="@string/continueButton"
         android:textSize="16sp"
         app:layout_constraintBottom_toBottomOf="parent"

@@ -26,23 +26,33 @@ public class IntervalsActivity extends MainActivity  {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_intervals);
-        ConfirmIntervalsProperties();
-        startIntervals();
-    }
-
-    public void ConfirmIntervalsProperties(){
-        //picking layout views
         roundTimeEditText = (EditText)findViewById(R.id.roundTimeEditText);
         breakTimeEditText = (EditText)findViewById(R.id.breakTimeEditText);
         roundsNumEditText = (EditText)findViewById(R.id.roundNumberEditText);
-        //setting confirm button
         confirmButton = (Button)findViewById(R.id.confirmIntervalsPropertiesButton);
+        sumTimeTextView = (TextView)findViewById(R.id.sumTimeTextView);
+        startIntervalsButton = (Button)findViewById(R.id.startIntervalButton);
+        roundBreakTextView = (TextView)findViewById(R.id.roundBreakTextView);
+        currentRoundTextView = (TextView)findViewById(R.id.currentRoundTextView);
+        roundBreakTextView = (TextView)findViewById(R.id.roundBreakTextView);
+        currentIntervalTextView = (TextView)findViewById(R.id.currentIntervalTextView);
+        currentBreakTextView = (TextView)findViewById(R.id.currentBreakTextView);
+    }
+
+
+    public void ConfirmIntervalsProperties(View view){
+        //picking layout views
+       // roundTimeEditText = (EditText)findViewById(R.id.roundTimeEditText);
+        //breakTimeEditText = (EditText)findViewById(R.id.breakTimeEditText);
+       // roundsNumEditText = (EditText)findViewById(R.id.roundNumberEditText);
+        //setting confirm button
+       // confirmButton = (Button)findViewById(R.id.confirmIntervalsPropertiesButton);
         confirmButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                roundTime = (Integer.parseInt(roundTimeEditText.getText().toString()));//setting round time
-                breakTime = (Integer.parseInt(breakTimeEditText.getText().toString()));//setting break time
-                roundsNumber = (Integer.parseInt(roundsNumEditText.getText().toString()));//setting rounds number
+                roundTime = Integer.parseInt(roundTimeEditText.getText().toString());//setting round time
+                breakTime = Integer.parseInt(breakTimeEditText.getText().toString());//setting break time
+                roundsNumber = Integer.parseInt(roundsNumEditText.getText().toString());//setting rounds number
                 showTrainingTime((roundTime+breakTime)*roundsNumber);
             }
         });
@@ -51,17 +61,13 @@ public class IntervalsActivity extends MainActivity  {
     public void showTrainingTime(int time){
         int minutes = time / 60;
         int sec = time % 60;
-        sumTimeTextView = (TextView)findViewById(R.id.sumTimeTextView);
+        //sumTimeTextView = (TextView)findViewById(R.id.sumTimeTextView);
         sumTimeTextView.setText(minutes +" min i " + sec + " sek");
     }
 
-    public void startIntervals(){
-        roundBreakTextView = (TextView)findViewById(R.id.roundBreakTextView);
-        currentRoundTextView = (TextView)findViewById(R.id.currentRoundTextView);
-        currentIntervalTextView = (TextView)findViewById(R.id.currentIntervalTextView);
-        currentBreakTextView = (TextView)findViewById(R.id.currentBreakTextView);
+    public void startIntervals(View view){
 
-        startIntervalsButton = (Button)findViewById(R.id.startIntervalButton);
+    //startIntervalsButton = (Button)findViewById(R.id.startIntervalButton);
         startIntervalsButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -73,26 +79,32 @@ public class IntervalsActivity extends MainActivity  {
                         e.printStackTrace();
                     }
                 }*/
-
+                int citv = Integer.parseInt(currentIntervalTextView.getText().toString());
+                int cbtv = Integer.parseInt(currentBreakTextView.getText().toString());
                 for(int i = 1; i <= roundsNumber; i++){ //round number
+                    //roundBreakTextView = (TextView)findViewById(R.id.roundBreakTextView);
                     roundBreakTextView.setText("Praca, praca...");  //shows that it is workout time
+
+                    //currentRoundTextView = (TextView)findViewById(R.id.currentRoundTextView);
                     currentRoundTextView.setText(i+"");       //shows current round number
 
                     for(int j = roundTime; j >= 0; j--){    //counting round time descend til 0
-                        currentIntervalTextView.setText(j+"");
+                        //currentIntervalTextView = (TextView)findViewById(R.id.currentIntervalTextView);
+                        citv = roundTime;
+                        currentIntervalTextView.setText(citv+"");
                         try {
                             Thread.sleep(1000);
                         } catch (InterruptedException e) {
                             e.printStackTrace();
                         }
                     }
-                    //Interval interval = new Interval(roundTime, currentIntervalTextView);
-                    //interval.start();
+                    //roundBreakTextView = (TextView)findViewById(R.id.roundBreakTextView);
                     roundBreakTextView.setText("Przerwa, byku :)"); //shows that it is break time
-                   // Break break1 = new Break(breakTime, currentBreakTextView);
-                   // break1.start();
-                    for(int j = breakTime; j >= 0; j--){
-                        currentBreakTextView.setText(j+"");
+
+                    for(int j = breakTime; j >= 0; j--){    //counting round time descend til 0
+                        //currentBreakTextView = (TextView)findViewById(R.id.currentBreakTextView);
+                        cbtv = breakTime;
+                        currentBreakTextView.setText(cbtv+"");
                         try {
                             Thread.sleep(1000);
                         } catch (InterruptedException e) {
