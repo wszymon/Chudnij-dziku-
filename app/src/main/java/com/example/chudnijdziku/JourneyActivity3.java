@@ -4,19 +4,22 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
 import android.widget.TextView;
+import android.widget.Toast;
 
 public class JourneyActivity3 extends JourneyActivity2 {
 
     private TextView infoTextView;
-    private int ppm = getBMO();
+
 
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_journey3);
+        Bundle extras = getIntent().getExtras();
+        int ppm = extras.getInt("BMO");
         infoTextView = (TextView)findViewById(R.id.infoTextView);
-        infoTextView.setText("Dzięki danym, które podałeś na poprzedniej stronie wiemy, że Twoja podstawowa przemiana materii (PPM) wynosi: " + ppm +" Kcal\n" +
+        infoTextView.setText("Dzięki danym, które podałeś na poprzedniej stronie wiemy, że Twoja Podstawowa Przemiana Materii (PPM) wynosi: " + ppm +" Kcal\n" +
                 "Jest to ilość kilokalorii, które Twój organizm potrzebuje do podtrzymywania funkcji organów wewnętrznych. Innymi słowy dziku, gdybyś cały dzień leżał bez ruchu na " +
                 "łące to właśnie tyle kalorii Twój organizm by potrzebował żeby nie chudnąć, ani nie tyć. \n" +
                 "Jednak Ty nie leżysz cały dzień. Wręcz przeciwnie, pracujesz, uczysz się, chodzisz, jeździsz itd., ale po kolei." +

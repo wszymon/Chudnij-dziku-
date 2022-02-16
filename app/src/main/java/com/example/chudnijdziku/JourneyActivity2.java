@@ -39,13 +39,15 @@ public class JourneyActivity2 extends JourneyActivity {
         return (int)result;
     }
     public void goNextPageAndCount(View view){
+
         setBodyweight(Float.parseFloat(bodyWeightEditText.getText().toString()));
         setGrowth(Float.parseFloat(growthEditText.getText().toString()));
         setAge(Integer.parseInt(ageEditText.getText().toString()));
         float BMO = (Harris_Benedict() + Mifflin()) / 2;
         setBMO((int)BMO);
         Intent intent = new Intent(this, JourneyActivity3.class);
+        intent.putExtra("BMO", getBMO());
         startActivity(intent);
-        Toast.makeText(this, getBMO()+"", Toast.LENGTH_SHORT).show();
+        //Toast.makeText(this, getBMO()+"", Toast.LENGTH_SHORT).show();
     }
 }
