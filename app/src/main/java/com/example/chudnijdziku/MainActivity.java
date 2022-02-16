@@ -55,12 +55,12 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
     }
 
-    public void goIntervals(View v){
-        Intent i = new Intent(this,IntervalsActivity.class);
+    public void goIntervals(View view) {
+        Intent i = new Intent(this, IntervalsActivity.class);
         startActivity(i);
     }
 
-    public void GoJourney(View v){
+    public void GoJourney(View view) {
         Intent i = new Intent(this, JourneyActivity.class);
         startActivity(i);
     }

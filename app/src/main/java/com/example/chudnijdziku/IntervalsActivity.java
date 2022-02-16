@@ -2,8 +2,11 @@ package com.example.chudnijdziku;
 
 import static java.util.concurrent.TimeUnit.*;
 
+import android.media.AudioAttributes;
+import android.media.AudioManager;
+import android.media.SoundPool;
+import android.os.Build;
 import android.os.Bundle;
-
 import android.os.Handler;
 import android.view.View;
 import android.widget.Button;
@@ -24,6 +27,8 @@ public class IntervalsActivity extends MainActivity {
     private EditText roundTimeEditText, breakTimeEditText, roundsNumEditText;
     private Button confirmButton, startIntervalsButton;
     private Handler handler = new Handler();
+    private SoundPool soundPool;
+    private int boxingRing1x, boxingRing3x;
 
 
     @Override
@@ -32,6 +37,23 @@ public class IntervalsActivity extends MainActivity {
         setContentView(R.layout.activity_intervals);
         ConfirmIntervalsProperties();
         startIntervals();
+
+        if(Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP){
+            AudioAttributes audioAttributes = new AudioAttributes.Builder()
+                    .setUsage(AudioAttributes.USAGE_ASSISTANCE_SONIFICATION)
+                    .setContentType(AudioAttributes.CONTENT_TYPE_SONIFICATION)
+                    .build();
+            soundPool = new SoundPool.Builder()
+                    .setMaxStreams(2)
+                    .setAudioAttributes(audioAttributes)
+                    .build();
+        }
+        else{
+            soundPool = new SoundPool(2, AudioManager.STREAM_MUSIC, 0);
+        }
+        boxingRing1x = soundPool.load(this, R.raw.boxingring1x, 1);
+        boxingRing3x = soundPool.load(this, R.raw.boxingring3x, 1);
+
     }
 
     public void ConfirmIntervalsProperties() {
@@ -87,7 +109,6 @@ public class IntervalsActivity extends MainActivity {
                             e.printStackTrace();
                         }
 
-
                         for (int i = 1; i <= roundsNumber; i++) { //round number
                             int finalI = i;
                             handler.post(new Runnable() {
@@ -95,15 +116,15 @@ public class IntervalsActivity extends MainActivity {
                                 public void run() {
                                     roundBreakTextView.setText("Praca, praca...");  //shows that it is workout time
                                     currentRoundTextView.setText("Runda nr: " + finalI);       //shows current round number
+                                    soundPool.play(boxingRing3x,1,1,0,0,1);
                                 }
                             });
-
                             for (int j = roundTime; j >= 0; j--) {    //counting round time descend til 0
                                 int finalJ = j;
                                 handler.post(new Runnable() {
                                     @Override
                                     public void run() {
-                                        currentIntervalTextView.setText("Czas aktywności " + finalJ);
+                                        currentIntervalTextView.setText("Czas aktywności: " + finalJ);
                                     }
                                 });
 
@@ -113,28 +134,38 @@ public class IntervalsActivity extends MainActivity {
                                     e.printStackTrace();
                                 }
                             }
-                            handler.post(new Runnable() {
-                                @Override
-                                public void run() {
-                                    roundBreakTextView.setText("Przerwa, byku :)"); //shows that it is break time
-                                }
-                            });
-
-
-                            for (int j = breakTime; j >= 0; j--) {    //counting round time descend til 0
-                                int finalJ = j;
+                            if (i != roundsNumber) {
                                 handler.post(new Runnable() {
                                     @Override
                                     public void run() {
-                                        currentBreakTextView.setText("Czas przerwy " + finalJ);
+                                        roundBreakTextView.setText("Przerwa, byku :)"); //shows that it is break time
+                                        soundPool.play(boxingRing1x,1,1,0,0,1);
                                     }
                                 });
 
-                                try {
-                                    Thread.sleep(1000);
-                                } catch (InterruptedException e) {
-                                    e.printStackTrace();
+
+                                for (int j = breakTime; j >= 0; j--) {    //counting round time descend til 0
+                                    int finalJ = j;
+                                    handler.post(new Runnable() {
+                                        @Override
+                                        public void run() {
+                                            currentBreakTextView.setText("Czas przerwy: " + finalJ);
+                                        }
+                                    });
+
+                                    try {
+                                        Thread.sleep(1000);
+                                    } catch (InterruptedException e) {
+                                        e.printStackTrace();
+                                    }
                                 }
+                            } else {
+                                handler.post(new Runnable() {
+                                    @Override
+                                    public void run() {
+                                        roundBreakTextView.setText("Koniec treningu"); //shows that it is break time
+                                    }
+                                });
                             }
                         }
                         handler.post(new Runnable() {

@@ -17,9 +17,9 @@
     <string name="breakTimeAskTextView">a ile odpoczynku, ryjku:</string>
     <string name="startButton">Jedziemy!</string>
     <string name="roundBreakTextView">ćwiczenia/przerwa</string>
-    <string name="currentRoundTextView">Runda nr</string>
-    <string name="currentBreakTextView">Przerwa</string>
-    <string name="currentIntervalTextView">Ćwieczenia</string>
+    <string name="currentRoundTextView">Runda nr: 0</string>
+    <string name="currentBreakTextView">Czas przerwy: 0</string>
+    <string name="currentIntervalTextView">Czas aktywności: 0</string>
     <string name="textToRead">text</string>
     <string name="continueButton">Idź dalej</string>
     <string name="bodyWeight"></string>

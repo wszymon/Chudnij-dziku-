@@ -15,7 +15,7 @@ public class JourneyActivity extends MainActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_journey);
-        text = (TextView)findViewById(R.id.welcomeInfos);
+        text = (TextView) findViewById(R.id.welcomeInfos);
 
         text.setText("Witaj, dziku!\n" +
                 "To początek Twojej drogi w głąb lasu.\n" +
@@ -36,7 +36,8 @@ public class JourneyActivity extends MainActivity {
                 "Pamiętaj, jeśli naprawdę chcesz schudnąć\n" +
                 " to bądź uczciwy wobec samego siebie.");
     }
-    public void goForward(View view){
+
+    public void goForward(View view) {
         Intent intent = new Intent(this, JourneyActivity2.class);
         startActivity(intent);
     }
