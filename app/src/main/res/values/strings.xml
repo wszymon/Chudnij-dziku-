@@ -15,4 +15,16 @@
     <string name="sumIntervalTimeTextView">... minut i ... sekund</string>
     <string name="roundTimeAskTextView">Jak długie mają być te rundy:</string>
     <string name="breakTimeAskTextView">a ile odpoczynku, ryjku:</string>
+    <string name="startButton">Jedziemy!</string>
+    <string name="roundBreakTextView">ćwiczenia/przerwa</string>
+    <string name="currentRoundTextView">Runda nr</string>
+    <string name="currentBreakTextView">Przerwa</string>
+    <string name="currentIntervalTextView">Ćwieczenia</string>
+    <string name="textToRead">text</string>
+    <string name="continueButton">Idź dalej</string>
+    <string name="bodyWeight"></string>
+    <string name="askForGrowth">Ile masz wzrostu (w centymetrach):</string>
+    <string name="growth"></string>
+    <string name="askForAge">na koniec, ile masz lat:</string>
+    <string name="ageEditText"></string>
 </resources>

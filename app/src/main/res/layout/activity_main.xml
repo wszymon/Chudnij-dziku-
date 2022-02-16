@@ -22,6 +22,7 @@
         android:layout_height="250dp"
         android:layout_marginStart="8dp"
         android:layout_marginTop="8dp"
+        android:onClick="GoJourney"
         android:text="@string/goJourneyButton"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/ateKcalTextView" />

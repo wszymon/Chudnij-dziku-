@@ -10,6 +10,41 @@ import android.view.WindowManager;
 
 public class MainActivity extends AppCompatActivity {
 
+    private float bodyweight, growth;
+    private int age, BMO;
+
+    public int getBMO() {
+        return BMO;
+    }
+
+    public void setBMO(int BMO) {
+        this.BMO = BMO;
+    }
+
+    public float getBodyweight() {
+        return bodyweight;
+    }
+
+    public void setBodyweight(float bodyweight) {
+        this.bodyweight = bodyweight;
+    }
+
+    public float getGrowth() {
+        return growth;
+    }
+
+    public void setGrowth(float growth) {
+        this.growth = growth;
+    }
+
+    public int getAge() {
+        return age;
+    }
+
+    public void setAge(int age) {
+        this.age = age;
+    }
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -24,4 +59,10 @@ public class MainActivity extends AppCompatActivity {
         Intent i = new Intent(this,IntervalsActivity.class);
         startActivity(i);
     }
+
+    public void GoJourney(View v){
+        Intent i = new Intent(this, JourneyActivity.class);
+        startActivity(i);
+    }
+
 }
