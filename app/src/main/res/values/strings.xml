@@ -1,10 +1,10 @@
 <resources>
     <string name="app_name">Chudnij dziku!</string>
-    <string name="goJourneyButton">Start your journey</string>
-    <string name="countButton">Count yourself</string>
-    <string name="intervalsButton">Go intervals</string>
-    <string name="ateKcal">Today you ate:</string>
-    <string name="burnkcal">Today you burn:</string>
+    <string name="goJourneyButton">Zacznij swoją podróż</string>
+    <string name="countButton">Policz się</string>
+    <string name="intervalsButton">Interwały</string>
+    <string name="ateKcal">Dzisiaj zjadłeś: 0 Kcal</string>
+    <string name="burnkcal">i spaliłeś: 0 Kcal</string>
     <string name="randomFact">Here will be random health and fitness facts</string>
     <string name="roundTimeTextView"></string>
     <string name="breakTimeTextView"></string>
