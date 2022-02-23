@@ -13,6 +13,10 @@ import android.view.WindowManager;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import java.io.File;
+import java.io.FileNotFoundException;
+import java.io.FileReader;
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -22,6 +26,7 @@ public class MainActivity extends AppCompatActivity {
     private int age = 0, BMO;
     private TextView textViewRandomInfos;
     private static List<Integer> list = new ArrayList<>();
+    //private String sList;
 
     public int getBMO() {
         return BMO;
@@ -78,7 +83,7 @@ public class MainActivity extends AppCompatActivity {
         startActivity(i);
     }
 
-    private String[] randomInfos = new String[] {
+    private String[] randomInfos = new String[]{
             "Większość diety każdego dzika (około 50%) powinny stanowić zdrowe węglowodany. Oto kilka z nich: " +
                     "ryż brązowy, kasza gryczana niepalona, kasza jaglana, komosa ryżowa, makarony pełnoziarniste," +
                     "chleb z pełnej mąki (ciemny), płatki owsiane górskie, soczewica, ziemniaki (gotowane), bataty. " +
@@ -94,30 +99,52 @@ public class MainActivity extends AppCompatActivity {
                     " Nic się nie stanie jak jednego dnia zje się więcej jednego czy drugiego. Jedzenie to ma też być przyjemność :) "
 
     };
-    public int randomInfoNum(){
+
+    public int randomInfoNum() {
         int min = 0;
-        int max = randomInfos.length-1;
-        int result = (int)(Math.random()*(max - min + 1) + min);
+        int max = randomInfos.length - 1;
+        int result = (int) (Math.random() * (max - min + 1) + min);
         return result;
     }
 
-    public void showRandomInfo(){
-        if (list.size() == randomInfos.length - 1){
+    public void showRandomInfo() {
+        File file = new File("/textFiles/shownList.txt");
+        String slist = null;
+        try {
+            FileReader fr = new FileReader(file);
+            int i;
+            while (true) { //till end of file
+                try {
+                    if (!((i = fr.read()) != -1)) { //reading from file char by char
+                        slist += (char) i; //adding chars to slist
+                    }
+                } catch (IOException e) {
+                    e.printStackTrace();
+                }
+
+            }
+        } catch (FileNotFoundException e) {
+            e.printStackTrace();
+        }
+
+
+        if (list.size() == randomInfos.length - 1) {
             list.clear();
         }
-        //i will have to send list size to file but i think 'checking' logic is correct
-        int randomIndex =  randomInfoNum();
+        //ill have to send list size to file but i think 'checking' logic is correct
+        int randomIndex = randomInfoNum();
         boolean shownIndex = wasItShown(randomIndex, list);
-        if (shownIndex == true){
-           showRandomInfo();
-        }else{
+        if (shownIndex == true) {
+            showRandomInfo();
+        } else {
             list.add(randomIndex);
             textViewRandomInfos.setText(randomInfos[randomIndex]);
         }
     }
-    public boolean wasItShown(int num, List<Integer> list){
-        for(int i : list){
-            if(i == num){
+
+    public boolean wasItShown(int num, List<Integer> list) {
+        for (int i : list) {
+            if (i == num) {
                 return true;
             }
         }

@@ -11,18 +11,23 @@
         android:theme="@style/Theme.ChudnijDziku">
         <activity
             android:name=".JourneyActivity3"
+            android:screenOrientation="portrait"
             android:exported="false" />
         <activity
             android:name=".JourneyActivity2"
+            android:screenOrientation="portrait"
             android:exported="false" />
         <activity
             android:name=".JourneyActivity"
+            android:screenOrientation="portrait"
             android:exported="false" />
         <activity
             android:name=".IntervalsActivity"
+            android:screenOrientation="portrait"
             android:exported="false" />
         <activity
             android:name=".MainActivity"
+            android:screenOrientation="portrait"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
